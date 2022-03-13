@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>终端配色方案</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css" />
+    <script crossorigin="anonymous"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        src="https://lib.baomitu.com/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://lib.baomitu.com/animejs/3.2.1/anime.min.js"></script>
+    <script src="main.min.js"></script>
+    <style>
+        @font-face {
+            font-family: 'MesloLGS';
+            src: url(MesloLGS\ NF\ Regular.ttf);
+        }
+
+
+
+
+
+        .theme {
+            -webkit-font-smoothing: antialiased;
+            color: #FB89FB;
+            box-sizing: border-box;
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+            vertical-align: baseline;
+            position: relative;
+            z-index: 1;
+            align-items: center;
+            justify-content: center;
+            min-height: 140px;
+            padding: 13px;
+            padding-top: 0;
+            padding-bottom: 0;
+            cursor: pointer;
+        }
+
+        h3 {
+            -webkit-font-smoothing: antialiased;
+            cursor: pointer;
+            box-sizing: border-box;
+            margin: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+            top: 0;
+            left: 20px;
+            width: calc(100% - 40px);
+            padding: 23px 0;
+            font-size: 14px !important;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 1;
+        }
+
+        content {
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+            color: #F6FF56;
+            position: relative;
+            flex-direction: column;
+            line-height: 22px;
+            display: inherit;
+            width: calc(100% - 380px);
+        }
+    </style>
+</head>
+
+<body
+    class="mdui-theme-layout-dark mdui-drawer-body-left mdui-theme-layout-auto mdui-theme-primary-teal mdui-theme-accent-red mdui-appbar-with-toolbar"
+    style="background-color: #252423;">
+    <header class="mdui-appbar mdui-appbar-fixed">
+        <div class="mdui-toolbar" style="box-shadow: none">
+            <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"
+                mdui-drawer="{target: '#main-drawer', swipe: true}"><i class="mdui-icon material-icons">menu</i></span>
+            <a href="/" class="mdui-typo-title mdui-hidden-xs">终端配色主题</a>
+            <a href="/" class="mdui-typo-title " id="nameid"></a>
+        </div>
+
+    </header>
+    <div class="panel1 mdui-drawer" id="main-drawer">
+
+    </div>
+    <div class="panel2 mdui-container">
+        <div class="mdui-card"
+            style="max-width: 500px;height: 350px;margin: 0 auto;font-family:MesloLGS;padding: 10px;font-size: 9px;">
+            <div style="font-size: 0;width: 75%;margin: 0 auto;margin-top: 20px;">
+                <span style="width: 12.5%;height: 30px;display: inline-block;" id="black"></span>
+                <span style="width: 12.5%;height: 30px;display: inline-block;" id="red"></span>
+                <span style="width: 12.5%;height: 30px;display: inline-block;" id="green"></span>
+                <span style="width: 12.5%;height: 30px;display: inline-block;" id="yellow"></span>
+                <span style="width: 12.5%;height: 30px;display: inline-block;" id="blue"></span>
+                <span style="width: 12.5%;height: 30px;display: inline-block;" id="purple"></span>
+                <span style="width: 12.5%;height: 30px;display: inline-block;" id="cyan"></span>
+                <span style="width: 12.5%;height: 30px;display: inline-block;" id="white"></span>
+            </div>
+            <div style="font-size: 0;width: 75%;margin: 0 auto;margin-top: 0;margin-bottom: 20px;">
+                <span style="width: 12.5%;height: 30px;display: inline-block;" id="brightblack"></span>
+                <span style="width: 12.5%;height: 30px;display: inline-block;" id="brightred"></span>
+                <span style="width: 12.5%;height: 30px;display: inline-block;" id="brightgreen"></span>
+                <span style="width: 12.5%;height: 30px;display: inline-block;" id="brightyellow"></span>
+                <span style="width: 12.5%;height: 30px;display: inline-block;" id="brightblue"></span>
+                <span style="width: 12.5%;height: 30px;display: inline-block;" id="brightpurple"></span>
+                <span style="width: 12.5%;height: 30px;display: inline-block;" id="brightcyan"></span>
+                <span style="width: 12.5%;height: 30px;display: inline-block;" id="brightwhite"></span>
+            </div>
+            <div id="colorcard" class="mdui-container"></div>
+        </div>
+<br>
+
+        <div class="mdui-row">
+            <div class="mdui-col-xs-6">
+                <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-teal mdui-btn-block"
+                    onclick="pre()">上一个</button>
+                <br>
+                <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-teal mdui-btn-block"
+                    onclick="download_xcs()">下载xterm配置文件</button>
+                <br>
+                <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-teal mdui-btn-block"
+                    onclick="copy_vscode()">复制vscode配置</button>
+
+            </div>
+            <div class="mdui-col-xs-6">
+                <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-teal mdui-btn-block"
+                    onclick="next()">下一个</button>
+                <br>
+                <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-teal mdui-btn-block"
+                    onclick="download_termux()">下载termux配置文件</button>
+                <br>
+                <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-teal mdui-btn-block"
+                    onclick="copy_wt()">复制windows terminal配置</button>
+            </div>
+        </div>
+
+        <br>
+
+        <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-teal mdui-btn-block"
+            onclick="location.href='https://github.com/ShevonKuan'">Made with ❤ by Shevon</button>
+
+
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"></script>
+</body>
+
+</html>
