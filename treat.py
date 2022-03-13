@@ -36,6 +36,7 @@ def rename_duplicate(list, print_result=False):
     index = []
     new_list = []
     for i in list:
+        i['name'] = i['name'].replace(' ','_')
         if i["name"] in index:
             i["name"] += '2'
         else:
