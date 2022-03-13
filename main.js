@@ -367,12 +367,12 @@ function copy_wt() {
         '"cyan": "' + cyan + '",' + '\n' +
         '"foreground": "' + foreground + '",' + '\n' +
         '"green": "' + green + '",' + '\n' +
-        '"name"' + colorname + '",' + '\n' +
+        '"name": "' + colorname + '",' + '\n' +
         '"purple": "' + purple + '",' + '\n' +
         '"red": "' + red + '",' + '\n' +
         '"selectionBackground": "' + foreground + '",' + '\n' +
         '"white": "' + white + '",' + '\n' +
-        '"yellow": ' + yellow + '"' + '\n' +
+        '"yellow": "' + yellow + '"' + '\n' +
         '}'
     copyToClip(code)
 }
